@@ -268,7 +268,7 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
     }
 
     public static void preInitPackets(LimboServer server){
-        final String username = server.getConfig().getPingData().getVersion();
+        final String username = LimboConstants.version;
         final UUID uuid = UuidUtil.getOfflineModeUuid(username);
 
         PacketLoginSuccess loginSuccess = new PacketLoginSuccess();
@@ -281,7 +281,7 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
         joinGame.setFlat(false);
         joinGame.setGameMode(server.getConfig().getGameMode());
         joinGame.setHardcore(false);
-        joinGame.setMaxPlayers(server.getConfig().getMaxPlayers());
+        joinGame.setMaxPlayers(LimboConstants.maxPlayers);
         joinGame.setPreviousGameMode(-1);
         joinGame.setReducedDebugInfo(true);
         joinGame.setDebug(false);

@@ -53,7 +53,6 @@ public final class LimboServer {
 
         NodeSerializers.register(SocketAddress.class, new SocketAddressSerializer());
         NodeSerializers.register(InfoForwarding.class, new InfoForwarding.Serializer());
-        NodeSerializers.register(PingData.class, new PingData.Serializer());
         NodeSerializers.register(BossBar.class, new BossBar.Serializer());
         NodeSerializers.register(Position.class, new Position.Serializer());
 

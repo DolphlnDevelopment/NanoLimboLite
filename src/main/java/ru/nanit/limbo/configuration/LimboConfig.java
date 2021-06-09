@@ -14,7 +14,6 @@ public final class LimboConfig {
     private final Path root;
 
     private SocketAddress address;
-    private PingData pingData;
 
     private String dimensionType;
     private Position spawnPosition;
@@ -45,7 +44,6 @@ public final class LimboConfig {
         conf.reload();
 
         address = conf.getNode("bind").getValue(SocketAddress.class);
-        pingData = conf.getNode("ping").getValue(PingData.class);
         dimensionType = conf.getNode("dimension").getString();
         spawnPosition = conf.getNode("spawnPosition").getValue(Position.class);
         gameMode = conf.getNode("gameMode").getInt();
@@ -69,10 +67,6 @@ public final class LimboConfig {
 
     public SocketAddress getAddress() {
         return address;
-    }
-
-    public PingData getPingData() {
-        return pingData;
     }
 
     public String getDimensionType() {
