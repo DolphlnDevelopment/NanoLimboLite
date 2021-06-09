@@ -12,7 +12,7 @@ public class PacketPlayerPositionAndLook implements PacketOut {
     @Override
     public void encode(ByteMessage msg) {
         msg.writeDouble(0);
-        msg.writeDouble(0);
+        msg.writeDouble(64);
         msg.writeDouble(0);
         msg.writeFloat(0);
         msg.writeFloat(0);
