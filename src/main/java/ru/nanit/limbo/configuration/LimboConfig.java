@@ -15,8 +15,6 @@ public final class LimboConfig {
 
     private SocketAddress address;
 
-    private Position spawnPosition;
-
     private InfoForwarding infoForwarding;
     private long readTimeout;
     private int debugLevel = 3;
@@ -37,7 +35,6 @@ public final class LimboConfig {
         conf.reload();
 
         address = conf.getNode("bind").getValue(SocketAddress.class);
-        spawnPosition = conf.getNode("spawnPosition").getValue(Position.class);
 
         infoForwarding = conf.getNode("infoForwarding").getValue(InfoForwarding.class);
         readTimeout = conf.getNode("readTimeout").getLong();
@@ -50,10 +47,6 @@ public final class LimboConfig {
 
     public SocketAddress getAddress() {
         return address;
-    }
-
-    public Position getSpawnPosition() {
-        return spawnPosition;
     }
 
     public InfoForwarding getInfoForwarding() {

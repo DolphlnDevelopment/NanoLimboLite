@@ -53,7 +53,6 @@ public final class LimboServer {
 
         NodeSerializers.register(SocketAddress.class, new SocketAddressSerializer());
         NodeSerializers.register(InfoForwarding.class, new InfoForwarding.Serializer());
-        NodeSerializers.register(Position.class, new Position.Serializer());
 
         config = new LimboConfig(Paths.get("./"));
         config.load();

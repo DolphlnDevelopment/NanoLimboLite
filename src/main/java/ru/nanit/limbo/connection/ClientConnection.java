@@ -297,14 +297,6 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
         playerAbilities.setFlags(0x02);
         playerAbilities.setFieldOfView(0.1F);
 
-        PacketPlayerPositionAndLook positionAndLook = new PacketPlayerPositionAndLook();
-        positionAndLook.setX(server.getConfig().getSpawnPosition().getX());
-        positionAndLook.setY(server.getConfig().getSpawnPosition().getY());
-        positionAndLook.setZ(server.getConfig().getSpawnPosition().getZ());
-        positionAndLook.setYaw(server.getConfig().getSpawnPosition().getYaw());
-        positionAndLook.setPitch(server.getConfig().getSpawnPosition().getPitch());
-        positionAndLook.setTeleportId(ThreadLocalRandom.current().nextInt());
-
         PacketPlayerInfo info = new PacketPlayerInfo();
         info.setUsername(username);
         info.setGameMode(LimboConstants.gamemode);
@@ -316,7 +308,7 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
         PACKET_LOGIN_SUCCESS = PreRenderedPacket.of(loginSuccess);
         PACKET_JOIN_GAME = PreRenderedPacket.of(joinGame);
         PACKET_PLAYER_ABILITIES = PreRenderedPacket.of(playerAbilities);
-        PACKET_PLAYER_POS = PreRenderedPacket.of(positionAndLook);
+        PACKET_PLAYER_POS = PreRenderedPacket.of(new PacketPlayerPositionAndLook());
         PACKET_PLAYER_INFO = PreRenderedPacket.of(info);
         PACKET_DECLARE_COMMANDS = PreRenderedPacket.of(declareCommands);
     }
