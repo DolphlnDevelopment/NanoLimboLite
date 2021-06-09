@@ -7,9 +7,6 @@ bind:
   ip: 'localhost'
   port: 65535
 
-# Available dimensions: OVERWORLD, NETHER, THE_END
-dimension: THE_END
-
 # Spawn position in the world
 spawnPosition:
   x: 0.0

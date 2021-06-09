@@ -15,7 +15,6 @@ public final class LimboConfig {
 
     private SocketAddress address;
 
-    private String dimensionType;
     private Position spawnPosition;
     private int gameMode;
 
@@ -44,7 +43,6 @@ public final class LimboConfig {
         conf.reload();
 
         address = conf.getNode("bind").getValue(SocketAddress.class);
-        dimensionType = conf.getNode("dimension").getString();
         spawnPosition = conf.getNode("spawnPosition").getValue(Position.class);
         gameMode = conf.getNode("gameMode").getInt();
         useJoinMessage = conf.getNode("joinMessage", "enable").getBoolean();
@@ -67,10 +65,6 @@ public final class LimboConfig {
 
     public SocketAddress getAddress() {
         return address;
-    }
-
-    public String getDimensionType() {
-        return dimensionType;
     }
 
     public Position getSpawnPosition() {
