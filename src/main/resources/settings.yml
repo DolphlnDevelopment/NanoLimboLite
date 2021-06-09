@@ -7,11 +7,6 @@ bind:
   ip: 'localhost'
   port: 65535
 
-# Server's data in servers list
-ping:
-  description: '{"text": "&9NanoLimbo"}'
-  version: 'NanoLimbo'
-
 # Available dimensions: OVERWORLD, NETHER, THE_END
 dimension: THE_END
 
