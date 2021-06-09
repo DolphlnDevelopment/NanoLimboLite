@@ -17,9 +17,6 @@ public final class LimboConfig {
 
     private Position spawnPosition;
 
-    private boolean useBossBar;
-    private BossBar bossBar;
-
     private InfoForwarding infoForwarding;
     private long readTimeout;
     private int debugLevel = 3;
@@ -41,10 +38,6 @@ public final class LimboConfig {
 
         address = conf.getNode("bind").getValue(SocketAddress.class);
         spawnPosition = conf.getNode("spawnPosition").getValue(Position.class);
-        useBossBar = conf.getNode("bossBar", "enable").getBoolean();
-
-        if (useBossBar)
-            bossBar = conf.getNode("bossBar").getValue(BossBar.class);
 
         infoForwarding = conf.getNode("infoForwarding").getValue(InfoForwarding.class);
         readTimeout = conf.getNode("readTimeout").getLong();
@@ -73,14 +66,6 @@ public final class LimboConfig {
 
     public int getDebugLevel() {
         return debugLevel;
-    }
-
-    public boolean isUseBossBar() {
-        return useBossBar;
-    }
-
-    public BossBar getBossBar() {
-        return bossBar;
     }
 
     public boolean isUseEpoll() {

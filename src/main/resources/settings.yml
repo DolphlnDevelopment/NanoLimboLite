@@ -11,16 +11,6 @@ spawnPosition:
   yaw: 0.0
   pitch: 0.0
 
-# Bossbar sends when player join to server
-bossBar:
-  enable: true
-  text: '{"text": "Welcome to the Limbo!"}'
-  health: 1.0
-  # Available colors: PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
-  color: PINK
-  # Available divisions: SOLID, DASHES_6, DASHES_10, DASHES_12, DASHES_20
-  division: SOLID
-
 # Player info forwarding support. Available types: NONE, LEGACY, MODERN
 # Don't use secret if you not use MODERN type
 infoForwarding:

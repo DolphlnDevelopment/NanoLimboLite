@@ -44,7 +44,6 @@ public enum State {
             clientBound.register(0x30, PacketPlayerAbilities::new);
             clientBound.register(0x34, PacketPlayerPositionAndLook::new);
             clientBound.register(0x1F, PacketKeepAlive::new);
-            clientBound.register(0x0C, PacketBossBar::new);
             clientBound.register(0x32, PacketPlayerInfo::new);
         }
     };

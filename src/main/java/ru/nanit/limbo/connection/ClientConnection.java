@@ -319,12 +319,5 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
         PACKET_PLAYER_POS = PreRenderedPacket.of(positionAndLook);
         PACKET_PLAYER_INFO = PreRenderedPacket.of(info);
         PACKET_DECLARE_COMMANDS = PreRenderedPacket.of(declareCommands);
-
-        if (server.getConfig().isUseBossBar()){
-            PacketBossBar bossBar = new PacketBossBar();
-            bossBar.setBossBar(server.getConfig().getBossBar());
-            bossBar.setUuid(UUID.randomUUID());
-            PACKET_BOSS_BAR = PreRenderedPacket.of(bossBar);
-        }
     }
 }
