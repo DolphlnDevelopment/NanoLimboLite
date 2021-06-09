@@ -7,6 +7,9 @@ bind:
   ip: 'localhost'
   port: 65535
 
+# Max amount of players can join to server
+maxPlayers: 100
+
 # Server's data in servers list
 ping:
   description: '{"text": "&9NanoLimbo"}'
