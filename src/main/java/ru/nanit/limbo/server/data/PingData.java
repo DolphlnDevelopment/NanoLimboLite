@@ -4,6 +4,7 @@ import napi.configurate.data.ConfigNode;
 import napi.configurate.serializing.NodeSerializer;
 import ru.nanit.limbo.util.Colors;
 
+@Deprecated
 public class PingData {
 
     private String version;
