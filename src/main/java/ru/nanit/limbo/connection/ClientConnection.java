@@ -279,7 +279,7 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
         joinGame.setEntityId(0);
         joinGame.setEnableRespawnScreen(true);
         joinGame.setFlat(false);
-        joinGame.setGameMode(server.getConfig().getGameMode());
+        joinGame.setGameMode(LimboConstants.gamemode);
         joinGame.setHardcore(false);
         joinGame.setMaxPlayers(LimboConstants.maxPlayers);
         joinGame.setPreviousGameMode(-1);
@@ -307,7 +307,7 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
 
         PacketPlayerInfo info = new PacketPlayerInfo();
         info.setUsername(username);
-        info.setGameMode(server.getConfig().getGameMode());
+        info.setGameMode(LimboConstants.gamemode);
         info.setUuid(uuid);
 
         PacketDeclareCommands declareCommands = new PacketDeclareCommands();

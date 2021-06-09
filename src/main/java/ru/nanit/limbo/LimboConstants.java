@@ -10,6 +10,8 @@ public final class LimboConstants {
 
     public static final String motd = "nanolimbolite";
 
+    public static final int gamemode = 3;
+
     private LimboConstants(){}
 
 }

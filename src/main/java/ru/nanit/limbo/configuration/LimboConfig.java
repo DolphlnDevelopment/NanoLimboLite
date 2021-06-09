@@ -16,7 +16,6 @@ public final class LimboConfig {
     private SocketAddress address;
 
     private Position spawnPosition;
-    private int gameMode;
 
     private boolean useBossBar;
     private BossBar bossBar;
@@ -42,7 +41,6 @@ public final class LimboConfig {
 
         address = conf.getNode("bind").getValue(SocketAddress.class);
         spawnPosition = conf.getNode("spawnPosition").getValue(Position.class);
-        gameMode = conf.getNode("gameMode").getInt();
         useBossBar = conf.getNode("bossBar", "enable").getBoolean();
 
         if (useBossBar)
@@ -63,10 +61,6 @@ public final class LimboConfig {
 
     public Position getSpawnPosition() {
         return spawnPosition;
-    }
-
-    public int getGameMode() {
-        return gameMode;
     }
 
     public InfoForwarding getInfoForwarding() {
