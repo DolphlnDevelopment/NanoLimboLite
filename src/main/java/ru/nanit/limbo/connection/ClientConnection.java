@@ -320,14 +320,6 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
         PACKET_PLAYER_INFO = PreRenderedPacket.of(info);
         PACKET_DECLARE_COMMANDS = PreRenderedPacket.of(declareCommands);
 
-        if (server.getConfig().isUseJoinMessage()){
-            PacketChatMessage joinMessage = new PacketChatMessage();
-            joinMessage.setJsonData(server.getConfig().getJoinMessage());
-            joinMessage.setPosition(PacketChatMessage.Position.CHAT);
-            joinMessage.setSender(UUID.randomUUID());
-            PACKET_JOIN_MESSAGE = PreRenderedPacket.of(joinMessage);
-        }
-
         if (server.getConfig().isUseBossBar()){
             PacketBossBar bossBar = new PacketBossBar();
             bossBar.setBossBar(server.getConfig().getBossBar());

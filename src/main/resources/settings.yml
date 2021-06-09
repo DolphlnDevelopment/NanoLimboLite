@@ -22,11 +22,6 @@ spawnPosition:
 # 3 - Spectator (hide all UI bars)
 gameMode: 3
 
-# Message sends when player join to server
-joinMessage:
-  enable: true
-  text: '{"text": "&eWelcome to the Limbo!"}'
-
 # Bossbar sends when player join to server
 bossBar:
   enable: true

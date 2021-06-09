@@ -18,9 +18,7 @@ public final class LimboConfig {
     private Position spawnPosition;
     private int gameMode;
 
-    private boolean useJoinMessage;
     private boolean useBossBar;
-    private String joinMessage;
     private BossBar bossBar;
 
     private InfoForwarding infoForwarding;
@@ -45,11 +43,7 @@ public final class LimboConfig {
         address = conf.getNode("bind").getValue(SocketAddress.class);
         spawnPosition = conf.getNode("spawnPosition").getValue(Position.class);
         gameMode = conf.getNode("gameMode").getInt();
-        useJoinMessage = conf.getNode("joinMessage", "enable").getBoolean();
         useBossBar = conf.getNode("bossBar", "enable").getBoolean();
-
-        if (useJoinMessage)
-            joinMessage = Colors.of(conf.getNode("joinMessage", "text").getString());
 
         if (useBossBar)
             bossBar = conf.getNode("bossBar").getValue(BossBar.class);
@@ -87,16 +81,8 @@ public final class LimboConfig {
         return debugLevel;
     }
 
-    public boolean isUseJoinMessage() {
-        return useJoinMessage;
-    }
-
     public boolean isUseBossBar() {
         return useBossBar;
-    }
-
-    public String getJoinMessage() {
-        return joinMessage;
     }
 
     public BossBar getBossBar() {
