@@ -40,8 +40,6 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
     private static PreRenderedPacket PACKET_PLAYER_INFO;
     private static PreRenderedPacket PACKET_DECLARE_COMMANDS;
     private static PreRenderedPacket PACKET_PLAYER_POS;
-    private static PreRenderedPacket PACKET_JOIN_MESSAGE;
-    private static PreRenderedPacket PACKET_BOSS_BAR;
 
     private final LimboServer server;
     private final Channel channel;
@@ -189,12 +187,6 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
         writePacket(PACKET_PLAYER_POS);
         writePacket(PACKET_PLAYER_INFO);
         writePacket(PACKET_DECLARE_COMMANDS);
-
-        if (PACKET_BOSS_BAR != null)
-            writePacket(PACKET_BOSS_BAR);
-
-        if (PACKET_JOIN_MESSAGE != null)
-            writePacket(PACKET_JOIN_MESSAGE);
 
         sendKeepAlive();
     }
