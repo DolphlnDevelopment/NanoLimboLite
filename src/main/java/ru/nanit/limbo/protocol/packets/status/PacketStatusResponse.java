@@ -7,27 +7,12 @@ import ru.nanit.limbo.server.LimboServer;
 
 public class PacketStatusResponse implements PacketOut {
 
-    private static final String TEMPLATE = "{ \"version\": { \"name\": \"%s\", \"protocol\": %d }, \"players\": { \"max\": %d, \"online\": %d, \"sample\": [] }, \"description\": %s }";
+    private static final String REPLY = "{ \"version\": { \"name\": \"NanoLimbo\", \"protocol\": " + Version.getCurrentSupported().getProtocolNumber() + " }, \"players\": { \"max\": 1, \"online\": 0, \"sample\": [] }, \"description\": \"NanoLimboLite\" }";
 
-    private LimboServer server;
-
-    public PacketStatusResponse(){ }
-
-    public PacketStatusResponse(LimboServer server){
-        this.server = server;
-    }
+    public PacketStatusResponse() {}
 
     @Override
     public void encode(ByteMessage msg) {
-        String ver = LimboConstants.version;
-        String desc = LimboConstants.motd;
-        String json = getResponseJson(ver, Version.getCurrentSupported().getProtocolNumber(),
-                LimboConstants.maxPlayers, server.getConnections().getCount(), desc);
-
-        msg.writeString(json);
-    }
-
-    private String getResponseJson(String version, int protocol, int maxPlayers, int online, String description){
-        return String.format(TEMPLATE, version, protocol, maxPlayers, online, description);
+        msg.writeString(REPLY);
     }
 }

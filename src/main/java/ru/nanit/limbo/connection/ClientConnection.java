@@ -113,7 +113,7 @@ public class ClientConnection extends ChannelInboundHandlerAdapter {
         }
 
         if (packet instanceof PacketStatusRequest){
-            sendPacket(new PacketStatusResponse(server));
+            sendPacket(new PacketStatusResponse());
             return;
         }
 
